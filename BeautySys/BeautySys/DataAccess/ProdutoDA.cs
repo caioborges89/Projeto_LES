@@ -7,6 +7,7 @@ using System.Data.SqlClient;
 using BeautySys.Util;
 using BeautySys.Classes;
 using BeautySys.DataAccess.Util;
+using System.Windows.Forms;
 
 namespace BeautySys.DataAccess
 {
@@ -25,9 +26,9 @@ namespace BeautySys.DataAccess
             try
             {
                 string sql = @"INSERT INTO PRODUTO(PK_CODIGO,DESCRICAO,FK_TIPO_DESCRICAO,
-                          FK_MEDIDA,QTDE_ESTOQUE,ESTOQUE_MINIMO,VALOR,CUSTO,DESC_MAX,COMISSAO,OBS)
-                          VALUES(@PK_CODIGO,@DESCRICAO,@FK_TIPO_DESCRICAO,@FK_MEDIDA,@QTDE_ESTOQUE,
-                          @ESTOQUE_MINIMO,@VALOR,@CUSTO,@DESC_MAX,@COMISSAO,@OBS)";
+                             FK_MEDIDA,QTDE_ESTOQUE,ESTOQUE_MINIMO,VALOR,CUSTO,DESC_MAX,COMISSAO,OBS)
+                             VALUES(@PK_CODIGO,@DESCRICAO,@FK_TIPO_DESCRICAO,@FK_MEDIDA,@QTDE_ESTOQUE,
+                             @ESTOQUE_MINIMO,@VALOR,@CUSTO,@DESC_MAX,@COMISSAO,@OBS)";
 
                 SqlCommand cmd = SqlHelper.getCommand(sql);
                 cmd.Parameters.Add("@PK_CODIGO", SqlDbType.Int).Value = _funcoes.novoCodigo("PRODUTO", "PK_CODIGO");
@@ -42,13 +43,72 @@ namespace BeautySys.DataAccess
                 cmd.Parameters.Add("@COMISSAO", SqlDbType.Decimal).Value = produtoVO.comissao;
                 cmd.Parameters.Add("@OBS", SqlDbType.NVarChar).Value = produtoVO.obs;
 
+                SqlHelper.executeNonQuery(cmd);
                 return true;
             }
             catch (Exception ex)
             {
+                MessageBox.Show(ex.Message);
+                return false;
+            }            
+        }
+
+        /// <summary>
+        /// Método que exclui um produto 
+        /// </summary>
+        /// <param name="produtoVO"></param>
+        /// <returns></returns>
+        public bool  excluirProduto(ProdutoVO produtoVO)
+        {
+            try
+            {
+                string sql = @"DELETE FROM PRODUTO WHERE PK_CODIGO = @PK_CODIGO";
+
+                SqlCommand cmd = SqlHelper.getCommand(sql);
+
+                cmd.Parameters.Add("@PK_CODIGO", SqlDbType.Int).Value = produtoVO.pk_codigo;
+
+                SqlHelper.executeNonQuery(cmd);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
                 return false;
             }
-            
         }
+
+        /// <summary>
+        /// Método que realiza a alteração de
+        /// um produto cadastrado no sistema
+        /// </summary>
+        /// <param name="produtoVO"></param>
+        /// <returns></returns>
+        public bool alterarProduto(ProdutoVO produtoVO)
+        {
+            try
+            {
+                string sql = @"UPDATE PRODUTO SET 
+                               DESCRICAO         = @DESCRICAO,                                 
+                               FK_TIPO_DESCRICAO = @FK_TIPO_DESCRICAO,
+                               FK_MEDIDA         = @FK_MEDIDA,   
+                               QTDE_ESTOQUE      = @QTDE_ESTOQUE,
+                               ESTOQUE_MINIMO    = @ESTOQUE_MINIMO,
+                               VALOR             = @VALOR,
+                               CUSTO             = @CUSTO,
+                               DESC_MAX          = @DESC_MAX,
+                               COMISSAO          = @COMISSAO,
+                               OBS               = @OBS";
+                SqlCommand cmd = SqlHelper.getCommand(sql);
+                            
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+        }
+
     }
 }

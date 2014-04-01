@@ -33,15 +33,23 @@
             this.ribbonPanel1 = new DevComponents.DotNetBar.RibbonPanel();
             this.ribbonBar2 = new DevComponents.DotNetBar.RibbonBar();
             this.ribbonBar1 = new DevComponents.DotNetBar.RibbonBar();
-            this.btnCadTipoServico = new DevComponents.DotNetBar.ButtonItem();
             this.ribbonPanel2 = new DevComponents.DotNetBar.RibbonPanel();
             this.ribbonBar3 = new DevComponents.DotNetBar.RibbonBar();
-            this.BtnCadUser = new DevComponents.DotNetBar.ButtonItem();
             this.ribbonTabItem1 = new DevComponents.DotNetBar.RibbonTabItem();
             this.ribbonTabItem2 = new DevComponents.DotNetBar.RibbonTabItem();
             this.qatCustomizeItem1 = new DevComponents.DotNetBar.QatCustomizeItem();
             this.styleManager1 = new DevComponents.DotNetBar.StyleManager(this.components);
+            this.itemContainer3 = new DevComponents.DotNetBar.ItemContainer();
+            this.BtnCadUser = new DevComponents.DotNetBar.ButtonItem();
+            this.buttonItem1 = new DevComponents.DotNetBar.ButtonItem();
+            this.btnCadTipoServico = new DevComponents.DotNetBar.ButtonItem();
             this.btnTipoProduto = new DevComponents.DotNetBar.ButtonItem();
+            this.itemContainer2 = new DevComponents.DotNetBar.ItemContainer();
+            this.controlContainerItem1 = new DevComponents.DotNetBar.ControlContainerItem();
+            this.line1 = new DevComponents.DotNetBar.Controls.Line();
+            this.reflectionLabel1 = new DevComponents.DotNetBar.Controls.ReflectionLabel();
+            this.RlDataHora = new DevComponents.DotNetBar.Controls.ReflectionLabel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.ribbonControl1.SuspendLayout();
             this.ribbonPanel1.SuspendLayout();
             this.ribbonPanel2.SuspendLayout();
@@ -49,8 +57,8 @@
             // 
             // ribbonControl1
             // 
-            this.ribbonControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.ribbonControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             // 
             // 
             // 
@@ -126,12 +134,13 @@
             this.ribbonBar2.ContainerControlProcessDialogKey = true;
             this.ribbonBar2.Dock = System.Windows.Forms.DockStyle.Left;
             this.ribbonBar2.DragDropSupport = true;
-            this.ribbonBar2.Location = new System.Drawing.Point(259, 0);
+            this.ribbonBar2.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.buttonItem1});
+            this.ribbonBar2.Location = new System.Drawing.Point(85, 0);
             this.ribbonBar2.Name = "ribbonBar2";
-            this.ribbonBar2.Size = new System.Drawing.Size(100, 95);
+            this.ribbonBar2.Size = new System.Drawing.Size(97, 95);
             this.ribbonBar2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.ribbonBar2.TabIndex = 1;
-            this.ribbonBar2.Text = "ribbonBar2";
             // 
             // 
             // 
@@ -156,11 +165,10 @@
             this.ribbonBar1.Dock = System.Windows.Forms.DockStyle.Left;
             this.ribbonBar1.DragDropSupport = true;
             this.ribbonBar1.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.btnCadTipoServico,
-            this.btnTipoProduto});
+            this.btnCadTipoServico});
             this.ribbonBar1.Location = new System.Drawing.Point(3, 0);
             this.ribbonBar1.Name = "ribbonBar1";
-            this.ribbonBar1.Size = new System.Drawing.Size(256, 95);
+            this.ribbonBar1.Size = new System.Drawing.Size(82, 95);
             this.ribbonBar1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.ribbonBar1.TabIndex = 0;
             // 
@@ -171,13 +179,6 @@
             // 
             // 
             this.ribbonBar1.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // btnCadTipoServico
-            // 
-            this.btnCadTipoServico.Name = "btnCadTipoServico";
-            this.btnCadTipoServico.SubItemsExpandWidth = 14;
-            this.btnCadTipoServico.Text = "Tipo de Serviço";
-            this.btnCadTipoServico.Click += new System.EventHandler(this.btnCadTipoServico_Click);
             // 
             // ribbonPanel2
             // 
@@ -221,7 +222,7 @@
             this.BtnCadUser});
             this.ribbonBar3.Location = new System.Drawing.Point(3, 0);
             this.ribbonBar3.Name = "ribbonBar3";
-            this.ribbonBar3.Size = new System.Drawing.Size(665, 95);
+            this.ribbonBar3.Size = new System.Drawing.Size(128, 95);
             this.ribbonBar3.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.ribbonBar3.TabIndex = 0;
             // 
@@ -232,13 +233,6 @@
             // 
             // 
             this.ribbonBar3.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // BtnCadUser
-            // 
-            this.BtnCadUser.Name = "BtnCadUser";
-            this.BtnCadUser.SubItemsExpandWidth = 14;
-            this.BtnCadUser.Text = "Cadastro\r\nde Usuario";
-            this.BtnCadUser.Click += new System.EventHandler(this.BtnCadUser_Click);
             // 
             // ribbonTabItem1
             // 
@@ -262,18 +256,128 @@
             this.styleManager1.ManagerStyle = DevComponents.DotNetBar.eStyle.Office2010Blue;
             this.styleManager1.MetroColorParameters = new DevComponents.DotNetBar.Metro.ColorTables.MetroColorGeneratorParameters(System.Drawing.Color.White, System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(87)))), ((int)(((byte)(154))))));
             // 
+            // itemContainer3
+            // 
+            // 
+            // 
+            // 
+            this.itemContainer3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.itemContainer3.LayoutOrientation = DevComponents.DotNetBar.eOrientation.Vertical;
+            this.itemContainer3.Name = "itemContainer3";
+            // 
+            // 
+            // 
+            this.itemContainer3.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // BtnCadUser
+            // 
+            this.BtnCadUser.Image = global::BeautySys.Properties.Resources.cadastro_usuario;
+            this.BtnCadUser.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.BtnCadUser.Name = "BtnCadUser";
+            this.BtnCadUser.SubItemsExpandWidth = 14;
+            this.BtnCadUser.Text = "Cadastro\r\nde Usuario";
+            this.BtnCadUser.Click += new System.EventHandler(this.BtnCadUser_Click);
+            // 
+            // buttonItem1
+            // 
+            this.buttonItem1.Image = global::BeautySys.Properties.Resources.produtos;
+            this.buttonItem1.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.buttonItem1.Name = "buttonItem1";
+            this.buttonItem1.SubItemsExpandWidth = 14;
+            this.buttonItem1.Text = "Tipo de Produto";
+            // 
+            // btnCadTipoServico
+            // 
+            this.btnCadTipoServico.Image = global::BeautySys.Properties.Resources.add_servico;
+            this.btnCadTipoServico.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.btnCadTipoServico.Name = "btnCadTipoServico";
+            this.btnCadTipoServico.SubItemsExpandWidth = 14;
+            this.btnCadTipoServico.Text = "Tipo de Serviço";
+            this.btnCadTipoServico.Click += new System.EventHandler(this.btnCadTipoServico_Click);
+            // 
             // btnTipoProduto
             // 
+            this.btnTipoProduto.Image = global::BeautySys.Properties.Resources.produtos;
+            this.btnTipoProduto.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
             this.btnTipoProduto.Name = "btnTipoProduto";
+            this.btnTipoProduto.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.itemContainer2});
             this.btnTipoProduto.SubItemsExpandWidth = 14;
             this.btnTipoProduto.Text = "Tipo de Produto";
             this.btnTipoProduto.Click += new System.EventHandler(this.btnTipoProduto_Click);
+            // 
+            // itemContainer2
+            // 
+            // 
+            // 
+            // 
+            this.itemContainer2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.itemContainer2.LayoutOrientation = DevComponents.DotNetBar.eOrientation.Vertical;
+            this.itemContainer2.Name = "itemContainer2";
+            this.itemContainer2.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.controlContainerItem1});
+            // 
+            // 
+            // 
+            this.itemContainer2.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // controlContainerItem1
+            // 
+            this.controlContainerItem1.AllowItemResize = true;
+            this.controlContainerItem1.Control = this.line1;
+            this.controlContainerItem1.MenuVisibility = DevComponents.DotNetBar.eMenuVisibility.VisibleAlways;
+            this.controlContainerItem1.Name = "controlContainerItem1";
+            // 
+            // line1
+            // 
+            this.line1.BackColor = System.Drawing.Color.Transparent;
+            this.line1.Location = new System.Drawing.Point(2, 3);
+            this.line1.Name = "line1";
+            this.line1.Size = new System.Drawing.Size(20, 92);
+            this.line1.TabIndex = 0;
+            this.line1.Text = "line1";
+            this.line1.VerticalLine = true;
+            // 
+            // reflectionLabel1
+            // 
+            this.reflectionLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            // 
+            // 
+            // 
+            this.reflectionLabel1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.reflectionLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reflectionLabel1.Location = new System.Drawing.Point(13, 386);
+            this.reflectionLabel1.Name = "reflectionLabel1";
+            this.reflectionLabel1.Size = new System.Drawing.Size(175, 70);
+            this.reflectionLabel1.TabIndex = 1;
+            this.reflectionLabel1.Text = "<b><font size=\"+6\"><i>Beauty</i><font color=\"#B02B2C\">Sys</font></font></b>";
+            // 
+            // RlDataHora
+            // 
+            this.RlDataHora.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            // 
+            // 
+            // 
+            this.RlDataHora.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.RlDataHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RlDataHora.Location = new System.Drawing.Point(555, 386);
+            this.RlDataHora.Name = "RlDataHora";
+            this.RlDataHora.Size = new System.Drawing.Size(213, 70);
+            this.RlDataHora.TabIndex = 2;
+            this.RlDataHora.Text = "<b><font size=\"+6\"><i>Dev</i><font color=\"#B02B2C\">Components</font></font></b>";
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(780, 468);
+            this.Controls.Add(this.RlDataHora);
+            this.Controls.Add(this.reflectionLabel1);
             this.Controls.Add(this.ribbonControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
@@ -304,6 +408,14 @@
         private DevComponents.DotNetBar.ButtonItem BtnCadUser;
         private DevComponents.DotNetBar.RibbonBar ribbonBar2;
         private DevComponents.DotNetBar.ButtonItem btnCadTipoServico;
+        private DevComponents.DotNetBar.ItemContainer itemContainer3;
+        private DevComponents.DotNetBar.Controls.Line line1;
+        private DevComponents.DotNetBar.ButtonItem buttonItem1;
         private DevComponents.DotNetBar.ButtonItem btnTipoProduto;
+        private DevComponents.DotNetBar.ItemContainer itemContainer2;
+        private DevComponents.DotNetBar.ControlContainerItem controlContainerItem1;
+        private DevComponents.DotNetBar.Controls.ReflectionLabel reflectionLabel1;
+        private DevComponents.DotNetBar.Controls.ReflectionLabel RlDataHora;
+        private System.Windows.Forms.Timer timer1;
     }
 }

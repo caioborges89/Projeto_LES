@@ -20,6 +20,7 @@ namespace BeautySys.Forms
         private void FrmPrincipal_Load(object sender, EventArgs e)
         {
             this.Text = "BeautySys - Versão: " + Application.ProductVersion + " - Usuário: " + LoginVO.Usuario;
+            timer1.Enabled = true;
         }
 
         private void BtnCadUser_Click(object sender, EventArgs e)
@@ -38,6 +39,11 @@ namespace BeautySys.Forms
         {
             FrmTipoProduto frmTipoProduto = new FrmTipoProduto();
             frmTipoProduto.ShowDialog();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            RlDataHora.Text = Convert.ToString(DateTime.Now);
         }
     }
 }
