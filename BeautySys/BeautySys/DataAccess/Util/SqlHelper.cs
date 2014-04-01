@@ -112,8 +112,10 @@ namespace BeautySys.DataAccess.Util
                 if (_cnn.State == System.Data.ConnectionState.Open)
                     return _cnn;
 
-                _cnn.ConnectionString = "Data Source= " + SERVIDOR + ";  Initial Catalog=BD_BEAUTY; User ID= user_beauty; Password=1234abcd; MultipleActiveResultSets = true;";
+               // _cnn.ConnectionString = "Data Source= " + SERVIDOR + ";  Initial Catalog=BD_BEAUTY; User ID= user_beauty; Password=1234abcd; MultipleActiveResultSets = true;";
 
+                _cnn.ConnectionString = "Server = " + SERVIDOR + "; Database = BD_BEAUTY; Trusted_Connection = True;MultipleActiveResultSets = true;";
+                          
                 _cnn.Open();
 
                 return _cnn;

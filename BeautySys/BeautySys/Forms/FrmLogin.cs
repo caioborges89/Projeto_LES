@@ -81,9 +81,9 @@ namespace BeautySys
                         MessageBox.Show("Falha ao conectar banco de dados!", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         break;
 
-                    case 18456:
-                        MessageBox.Show("Falha de Logon user_beauty!", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        break;
+                    //case 18456:
+                    //    MessageBox.Show("Falha de Logon user_beauty!", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    //    break;                        
 
                     default:
                         MessageBox.Show(ex.Message);
