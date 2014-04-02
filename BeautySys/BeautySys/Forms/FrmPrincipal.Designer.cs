@@ -48,8 +48,9 @@
             this.controlContainerItem1 = new DevComponents.DotNetBar.ControlContainerItem();
             this.line1 = new DevComponents.DotNetBar.Controls.Line();
             this.reflectionLabel1 = new DevComponents.DotNetBar.Controls.ReflectionLabel();
-            this.RlDataHora = new DevComponents.DotNetBar.Controls.ReflectionLabel();
+            this.RlDtHora = new DevComponents.DotNetBar.Controls.ReflectionLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.lblDataHora = new System.Windows.Forms.Label();
             this.ribbonControl1.SuspendLayout();
             this.ribbonPanel1.SuspendLayout();
             this.ribbonPanel2.SuspendLayout();
@@ -352,31 +353,43 @@
             this.reflectionLabel1.TabIndex = 1;
             this.reflectionLabel1.Text = "<b><font size=\"+6\"><i>Beauty</i><font color=\"#B02B2C\">Sys</font></font></b>";
             // 
-            // RlDataHora
+            // RlDtHora
             // 
-            this.RlDataHora.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.RlDtHora.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             // 
             // 
             // 
-            this.RlDataHora.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.RlDataHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RlDataHora.Location = new System.Drawing.Point(555, 386);
-            this.RlDataHora.Name = "RlDataHora";
-            this.RlDataHora.Size = new System.Drawing.Size(213, 70);
-            this.RlDataHora.TabIndex = 2;
-            this.RlDataHora.Text = "<b><font size=\"+6\"><i>Dev</i><font color=\"#B02B2C\">Components</font></font></b>";
+            this.RlDtHora.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.RlDtHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RlDtHora.Location = new System.Drawing.Point(423, 386);
+            this.RlDtHora.Name = "RlDtHora";
+            this.RlDtHora.Size = new System.Drawing.Size(149, 70);
+            this.RlDtHora.TabIndex = 2;
+            this.RlDtHora.Text = "<b><font size=\"+6\"><i>Data/</i><font color=\"#B02B2C\">Hora:</font></font></b>";
             // 
             // timer1
             // 
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // lblDataHora
+            // 
+            this.lblDataHora.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblDataHora.AutoSize = true;
+            this.lblDataHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDataHora.Location = new System.Drawing.Point(578, 405);
+            this.lblDataHora.Name = "lblDataHora";
+            this.lblDataHora.Size = new System.Drawing.Size(60, 24);
+            this.lblDataHora.TabIndex = 3;
+            this.lblDataHora.Text = "label1";
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(780, 468);
-            this.Controls.Add(this.RlDataHora);
+            this.Controls.Add(this.lblDataHora);
+            this.Controls.Add(this.RlDtHora);
             this.Controls.Add(this.reflectionLabel1);
             this.Controls.Add(this.ribbonControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -391,6 +404,7 @@
             this.ribbonPanel1.ResumeLayout(false);
             this.ribbonPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -415,7 +429,8 @@
         private DevComponents.DotNetBar.ItemContainer itemContainer2;
         private DevComponents.DotNetBar.ControlContainerItem controlContainerItem1;
         private DevComponents.DotNetBar.Controls.ReflectionLabel reflectionLabel1;
-        private DevComponents.DotNetBar.Controls.ReflectionLabel RlDataHora;
+        private DevComponents.DotNetBar.Controls.ReflectionLabel RlDtHora;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label lblDataHora;
     }
 }

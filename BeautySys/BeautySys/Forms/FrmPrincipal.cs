@@ -43,7 +43,7 @@ namespace BeautySys.Forms
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            RlDataHora.Text = Convert.ToString(DateTime.Now);
+            lblDataHora.Text = Convert.ToString(DateTime.Now);
         }
     }
 }

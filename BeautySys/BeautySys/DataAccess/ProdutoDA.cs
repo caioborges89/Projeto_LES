@@ -100,6 +100,17 @@ namespace BeautySys.DataAccess
                                COMISSAO          = @COMISSAO,
                                OBS               = @OBS";
                 SqlCommand cmd = SqlHelper.getCommand(sql);
+
+                cmd.Parameters.Add("@DESCRICAO", SqlDbType.NVarChar).Value = produtoVO.descricao;
+                cmd.Parameters.Add("@FK_TIPO_DESCRICAO", SqlDbType.Int).Value = produtoVO.fk_tipo_produto;
+                cmd.Parameters.Add("@FK_MEDIDA", SqlDbType.VarChar).Value = produtoVO.fk_medida;
+                cmd.Parameters.Add("@QTDE_ESTOQUE", SqlDbType.Decimal).Value = produtoVO.qtde_estoque;
+                cmd.Parameters.Add("@ESTOQUE_MINIMO", SqlDbType.Int).Value = produtoVO.estoque_minimo;
+                cmd.Parameters.Add("@VALOR", SqlDbType.Decimal).Value = produtoVO.valor;
+                cmd.Parameters.Add("@CUSTO", SqlDbType.Decimal).Value = produtoVO.custo;
+                cmd.Parameters.Add("@DESC_MAX", SqlDbType.Decimal).Value = produtoVO.desc_max;
+                cmd.Parameters.Add("@COMISSAO", SqlDbType.Decimal).Value = produtoVO.comissao;
+                cmd.Parameters.Add("@OBS", SqlDbType.NVarChar).Value = produtoVO.obs;
                             
                 return true;
             }
@@ -108,6 +119,21 @@ namespace BeautySys.DataAccess
                 MessageBox.Show(ex.Message);
                 return false;
             }
+        }
+
+        /// <summary>
+        /// Método que realiza a busca do produto
+        /// </summary>
+        /// <param name="produtoVO"></param>
+        /// <returns></returns>
+        public List<ProdutoVO> buscarProduto(ProdutoVO produtoVO)
+        {
+            StringBuilder sb = new StringBuilder();
+            List<ProdutoVO> lista = new List<ProdutoVO>();
+
+            sb.Append("SELECT * FROM PRODUTO WHERE NOT PK_CODIGO IS NULL ");
+
+            return lista;
         }
 
     }
