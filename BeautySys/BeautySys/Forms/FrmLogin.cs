@@ -105,5 +105,12 @@ namespace BeautySys
         {
             GC.Collect();
         }
+
+        private void BtnCancelar_Click(object sender, EventArgs e)
+        {
+            GC.Collect();
+            this.Dispose();
+            Application.Exit();
+        }
     }
 }

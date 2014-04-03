@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using BeautySys.Classes;
+using BeautySys.Forms;
 
 namespace BeautySys.Forms
 {
@@ -21,6 +22,7 @@ namespace BeautySys.Forms
         {
             this.Text = "BeautySys - Versão: " + Application.ProductVersion + " - Usuário: " + LoginVO.Usuario;
             timer1.Enabled = true;
+            
         }
 
         private void BtnCadUser_Click(object sender, EventArgs e)
@@ -44,6 +46,12 @@ namespace BeautySys.Forms
         private void timer1_Tick(object sender, EventArgs e)
         {
             lblDataHora.Text = Convert.ToString(DateTime.Now);
+        }
+
+        private void BtnCadProduto_Click(object sender, EventArgs e)
+        {
+            FrmProduto frmProduto = new FrmProduto();
+            frmProduto.ShowDialog();
         }
     }
 }

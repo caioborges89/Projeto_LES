@@ -1,6 +1,6 @@
 ﻿namespace BeautySys
 {
-    partial class Produto
+    partial class FrmProduto
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.DgvCadProdutos = new System.Windows.Forms.DataGridView();
             this.btnFechar = new System.Windows.Forms.Button();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -56,7 +56,7 @@
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.lblCodigo = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvCadProdutos)).BeginInit();
             this.SuspendLayout();
             // 
             // comboBox1
@@ -67,13 +67,13 @@
             this.comboBox1.Size = new System.Drawing.Size(317, 21);
             this.comboBox1.TabIndex = 93;
             // 
-            // dataGridView1
+            // DgvCadProdutos
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 46);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(257, 404);
-            this.dataGridView1.TabIndex = 92;
+            this.DgvCadProdutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvCadProdutos.Location = new System.Drawing.Point(12, 46);
+            this.DgvCadProdutos.Name = "DgvCadProdutos";
+            this.DgvCadProdutos.Size = new System.Drawing.Size(257, 404);
+            this.DgvCadProdutos.TabIndex = 92;
             // 
             // btnFechar
             // 
@@ -83,6 +83,7 @@
             this.btnFechar.TabIndex = 91;
             this.btnFechar.Text = "Fechar";
             this.btnFechar.UseVisualStyleBackColor = true;
+            this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
             // 
             // textBox7
             // 
@@ -293,7 +294,7 @@
             this.lblCodigo.TabIndex = 94;
             this.lblCodigo.Text = "Código:";
             // 
-            // Produto
+            // FrmProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -302,7 +303,7 @@
             this.Controls.Add(this.lblCodigo);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.DgvCadProdutos);
             this.Controls.Add(this.btnFechar);
             this.Controls.Add(this.textBox7);
             this.Controls.Add(this.textBox4);
@@ -326,10 +327,10 @@
             this.Controls.Add(this.btnAlterar);
             this.Controls.Add(this.btnNovo);
             this.Controls.Add(this.lblNome);
-            this.Name = "Produto";
+            this.Name = "FrmProduto";
             this.Text = "Cadastro de Produtos";
             this.Load += new System.EventHandler(this.Produto_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvCadProdutos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -338,7 +339,7 @@
         #endregion
 
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView DgvCadProdutos;
         private System.Windows.Forms.Button btnFechar;
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.TextBox textBox2;

@@ -133,7 +133,61 @@ namespace BeautySys.DataAccess
 
             sb.Append("SELECT * FROM PRODUTO WHERE NOT PK_CODIGO IS NULL ");
 
+            if (!string.IsNullOrEmpty(produtoVO.descricao))
+                sb.Append("AND DESCRICAO LIKE '%" + produtoVO.descricao + "%'");
+
+            sb.Append(" ORDER BY DESCRICAO");
+
+            string sql = Convert.ToString(sb);
+
+            using (IDataReader reader = SqlHelper.executeReader(sql))
+            {
+                while (reader.Read())
+                {
+                    var produto = new ProdutoVO();
+                    mapProduto(produto, reader);
+                    lista.Add(produto);
+                }
+            }
+
             return lista;
+        }
+
+        private void mapProduto(ProdutoVO produtoVO, IDataReader reader)
+        {
+            if (reader["PK_CODIGO"] != DBNull.Value)
+                produtoVO.pk_codigo = Convert.ToInt32(reader["PK_CODIGO"]);
+
+            if (reader["DESCRICAO"] != DBNull.Value)
+                produtoVO.descricao = Convert.ToString(reader["DESCRICAO"]);
+
+            if (reader["FK_TIPO_DESCRICAO"] != DBNull.Value)
+                produtoVO.pk_codigo = Convert.ToInt32(reader["FK_TIPO_DESCRICAO"]);
+
+            if (reader["FK_MEDIDA"] != DBNull.Value)
+                produtoVO.pk_codigo = Convert.ToInt32(reader["FK_MEDIDA"]);
+
+            if (reader["QTDE_ESTOQUE"] != DBNull.Value)
+                produtoVO.descricao = Convert.ToString(reader["QTDE_ESTOQUE"]);
+
+            if (reader["ESTOQUE_MINIMO"] != DBNull.Value)
+                produtoVO.pk_codigo = Convert.ToInt32(reader["ESTOQUE_MINIMO"]);
+
+            if (reader["VALOR"] != DBNull.Value)
+                produtoVO.descricao = Convert.ToString(reader["VALOR"]);
+
+            if (reader["CUSTO"] != DBNull.Value)
+                produtoVO.pk_codigo = Convert.ToInt32(reader["CUSTO"]);
+
+            if (reader["DESC_MAX"] != DBNull.Value)
+                produtoVO.descricao = Convert.ToString(reader["DESC_MAX"]);
+
+            if (reader["COMISSAO"] != DBNull.Value)
+                produtoVO.pk_codigo = Convert.ToInt32(reader["COMISSAO"]);
+
+            if (reader["OBS"] != DBNull.Value)
+                produtoVO.descricao = Convert.ToString(reader["OBS"]);            
+
         }
 
     }

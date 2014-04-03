@@ -32,17 +32,17 @@
             this.ribbonControl1 = new DevComponents.DotNetBar.RibbonControl();
             this.ribbonPanel1 = new DevComponents.DotNetBar.RibbonPanel();
             this.ribbonBar2 = new DevComponents.DotNetBar.RibbonBar();
+            this.buttonItem1 = new DevComponents.DotNetBar.ButtonItem();
             this.ribbonBar1 = new DevComponents.DotNetBar.RibbonBar();
+            this.btnCadTipoServico = new DevComponents.DotNetBar.ButtonItem();
             this.ribbonPanel2 = new DevComponents.DotNetBar.RibbonPanel();
             this.ribbonBar3 = new DevComponents.DotNetBar.RibbonBar();
+            this.BtnCadUser = new DevComponents.DotNetBar.ButtonItem();
             this.ribbonTabItem1 = new DevComponents.DotNetBar.RibbonTabItem();
             this.ribbonTabItem2 = new DevComponents.DotNetBar.RibbonTabItem();
             this.qatCustomizeItem1 = new DevComponents.DotNetBar.QatCustomizeItem();
             this.styleManager1 = new DevComponents.DotNetBar.StyleManager(this.components);
             this.itemContainer3 = new DevComponents.DotNetBar.ItemContainer();
-            this.BtnCadUser = new DevComponents.DotNetBar.ButtonItem();
-            this.buttonItem1 = new DevComponents.DotNetBar.ButtonItem();
-            this.btnCadTipoServico = new DevComponents.DotNetBar.ButtonItem();
             this.btnTipoProduto = new DevComponents.DotNetBar.ButtonItem();
             this.itemContainer2 = new DevComponents.DotNetBar.ItemContainer();
             this.controlContainerItem1 = new DevComponents.DotNetBar.ControlContainerItem();
@@ -51,6 +51,8 @@
             this.RlDtHora = new DevComponents.DotNetBar.Controls.ReflectionLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.lblDataHora = new System.Windows.Forms.Label();
+            this.ribbonBar4 = new DevComponents.DotNetBar.RibbonBar();
+            this.BtnCadProduto = new DevComponents.DotNetBar.ButtonItem();
             this.ribbonControl1.SuspendLayout();
             this.ribbonPanel1.SuspendLayout();
             this.ribbonPanel2.SuspendLayout();
@@ -100,6 +102,7 @@
             // ribbonPanel1
             // 
             this.ribbonPanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.ribbonPanel1.Controls.Add(this.ribbonBar4);
             this.ribbonPanel1.Controls.Add(this.ribbonBar2);
             this.ribbonPanel1.Controls.Add(this.ribbonBar1);
             this.ribbonPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -151,6 +154,14 @@
             // 
             this.ribbonBar2.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
+            // buttonItem1
+            // 
+            this.buttonItem1.Image = global::BeautySys.Properties.Resources.produtos;
+            this.buttonItem1.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.buttonItem1.Name = "buttonItem1";
+            this.buttonItem1.SubItemsExpandWidth = 14;
+            this.buttonItem1.Text = "Tipo de Produto";
+            // 
             // ribbonBar1
             // 
             this.ribbonBar1.AutoOverflowEnabled = true;
@@ -180,6 +191,15 @@
             // 
             // 
             this.ribbonBar1.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // btnCadTipoServico
+            // 
+            this.btnCadTipoServico.Image = global::BeautySys.Properties.Resources.add_servico;
+            this.btnCadTipoServico.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.btnCadTipoServico.Name = "btnCadTipoServico";
+            this.btnCadTipoServico.SubItemsExpandWidth = 14;
+            this.btnCadTipoServico.Text = "Tipo de Serviço";
+            this.btnCadTipoServico.Click += new System.EventHandler(this.btnCadTipoServico_Click);
             // 
             // ribbonPanel2
             // 
@@ -235,6 +255,15 @@
             // 
             this.ribbonBar3.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
+            // BtnCadUser
+            // 
+            this.BtnCadUser.Image = global::BeautySys.Properties.Resources.cadastro_usuario;
+            this.BtnCadUser.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.BtnCadUser.Name = "BtnCadUser";
+            this.BtnCadUser.SubItemsExpandWidth = 14;
+            this.BtnCadUser.Text = "Cadastro\r\nde Usuario";
+            this.BtnCadUser.Click += new System.EventHandler(this.BtnCadUser_Click);
+            // 
             // ribbonTabItem1
             // 
             this.ribbonTabItem1.Checked = true;
@@ -269,32 +298,6 @@
             // 
             // 
             this.itemContainer3.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // BtnCadUser
-            // 
-            this.BtnCadUser.Image = global::BeautySys.Properties.Resources.cadastro_usuario;
-            this.BtnCadUser.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
-            this.BtnCadUser.Name = "BtnCadUser";
-            this.BtnCadUser.SubItemsExpandWidth = 14;
-            this.BtnCadUser.Text = "Cadastro\r\nde Usuario";
-            this.BtnCadUser.Click += new System.EventHandler(this.BtnCadUser_Click);
-            // 
-            // buttonItem1
-            // 
-            this.buttonItem1.Image = global::BeautySys.Properties.Resources.produtos;
-            this.buttonItem1.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
-            this.buttonItem1.Name = "buttonItem1";
-            this.buttonItem1.SubItemsExpandWidth = 14;
-            this.buttonItem1.Text = "Tipo de Produto";
-            // 
-            // btnCadTipoServico
-            // 
-            this.btnCadTipoServico.Image = global::BeautySys.Properties.Resources.add_servico;
-            this.btnCadTipoServico.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
-            this.btnCadTipoServico.Name = "btnCadTipoServico";
-            this.btnCadTipoServico.SubItemsExpandWidth = 14;
-            this.btnCadTipoServico.Text = "Tipo de Serviço";
-            this.btnCadTipoServico.Click += new System.EventHandler(this.btnCadTipoServico_Click);
             // 
             // btnTipoProduto
             // 
@@ -383,6 +386,45 @@
             this.lblDataHora.TabIndex = 3;
             this.lblDataHora.Text = "label1";
             // 
+            // ribbonBar4
+            // 
+            this.ribbonBar4.AutoOverflowEnabled = true;
+            // 
+            // 
+            // 
+            this.ribbonBar4.BackgroundMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.ribbonBar4.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.ribbonBar4.ContainerControlProcessDialogKey = true;
+            this.ribbonBar4.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ribbonBar4.DragDropSupport = true;
+            this.ribbonBar4.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.BtnCadProduto});
+            this.ribbonBar4.Location = new System.Drawing.Point(182, 0);
+            this.ribbonBar4.Name = "ribbonBar4";
+            this.ribbonBar4.Size = new System.Drawing.Size(100, 95);
+            this.ribbonBar4.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.ribbonBar4.TabIndex = 2;
+            // 
+            // 
+            // 
+            this.ribbonBar4.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.ribbonBar4.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // BtnCadProduto
+            // 
+            this.BtnCadProduto.Image = global::BeautySys.Properties.Resources.cad_Produto;
+            this.BtnCadProduto.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.BtnCadProduto.Name = "BtnCadProduto";
+            this.BtnCadProduto.SubItemsExpandWidth = 14;
+            this.BtnCadProduto.Text = "Cadastro \r\nde Produtos";
+            this.BtnCadProduto.Click += new System.EventHandler(this.BtnCadProduto_Click);
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -432,5 +474,7 @@
         private DevComponents.DotNetBar.Controls.ReflectionLabel RlDtHora;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label lblDataHora;
+        private DevComponents.DotNetBar.RibbonBar ribbonBar4;
+        private DevComponents.DotNetBar.ButtonItem BtnCadProduto;
     }
 }
