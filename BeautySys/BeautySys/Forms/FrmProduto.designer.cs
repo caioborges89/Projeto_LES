@@ -28,14 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbTipoProduto = new System.Windows.Forms.ComboBox();
             this.DgvCadProdutos = new System.Windows.Forms.DataGridView();
             this.btnFechar = new System.Windows.Forms.Button();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtObs = new System.Windows.Forms.TextBox();
+            this.txtCusto = new System.Windows.Forms.TextBox();
+            this.txtComissao = new System.Windows.Forms.TextBox();
+            this.txtDescMaximo = new System.Windows.Forms.TextBox();
+            this.txtValor = new System.Windows.Forms.TextBox();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.lblObservacao = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -49,23 +49,24 @@
             this.btnNovo = new System.Windows.Forms.Button();
             this.lblNome = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cbMedida = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtEstoque = new System.Windows.Forms.TextBox();
+            this.txtEstoqueMinino = new System.Windows.Forms.TextBox();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.lblCodigo = new System.Windows.Forms.Label();
+            this.btnGravar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DgvCadProdutos)).BeginInit();
             this.SuspendLayout();
             // 
-            // comboBox1
+            // cbTipoProduto
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(355, 76);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(317, 21);
-            this.comboBox1.TabIndex = 93;
+            this.cbTipoProduto.FormattingEnabled = true;
+            this.cbTipoProduto.Location = new System.Drawing.Point(355, 76);
+            this.cbTipoProduto.Name = "cbTipoProduto";
+            this.cbTipoProduto.Size = new System.Drawing.Size(317, 21);
+            this.cbTipoProduto.TabIndex = 93;
             // 
             // DgvCadProdutos
             // 
@@ -85,41 +86,41 @@
             this.btnFechar.UseVisualStyleBackColor = true;
             this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
             // 
-            // textBox7
+            // txtObs
             // 
-            this.textBox7.Location = new System.Drawing.Point(355, 224);
-            this.textBox7.Multiline = true;
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(317, 184);
-            this.textBox7.TabIndex = 90;
+            this.txtObs.Location = new System.Drawing.Point(355, 224);
+            this.txtObs.Multiline = true;
+            this.txtObs.Name = "txtObs";
+            this.txtObs.Size = new System.Drawing.Size(317, 184);
+            this.txtObs.TabIndex = 90;
             // 
-            // textBox2
+            // txtCusto
             // 
-            this.textBox2.Location = new System.Drawing.Point(552, 165);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(120, 20);
-            this.textBox2.TabIndex = 86;
+            this.txtCusto.Location = new System.Drawing.Point(552, 165);
+            this.txtCusto.Name = "txtCusto";
+            this.txtCusto.Size = new System.Drawing.Size(120, 20);
+            this.txtCusto.TabIndex = 86;
             // 
-            // textBox10
+            // txtComissao
             // 
-            this.textBox10.Location = new System.Drawing.Point(552, 195);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(120, 20);
-            this.textBox10.TabIndex = 87;
+            this.txtComissao.Location = new System.Drawing.Point(552, 195);
+            this.txtComissao.Name = "txtComissao";
+            this.txtComissao.Size = new System.Drawing.Size(120, 20);
+            this.txtComissao.TabIndex = 87;
             // 
-            // textBox8
+            // txtDescMaximo
             // 
-            this.textBox8.Location = new System.Drawing.Point(355, 194);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(120, 20);
-            this.textBox8.TabIndex = 89;
+            this.txtDescMaximo.Location = new System.Drawing.Point(355, 194);
+            this.txtDescMaximo.Name = "txtDescMaximo";
+            this.txtDescMaximo.Size = new System.Drawing.Size(120, 20);
+            this.txtDescMaximo.TabIndex = 89;
             // 
-            // textBox1
+            // txtValor
             // 
-            this.textBox1.Location = new System.Drawing.Point(355, 165);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(120, 20);
-            this.textBox1.TabIndex = 88;
+            this.txtValor.Location = new System.Drawing.Point(355, 165);
+            this.txtValor.Name = "txtValor";
+            this.txtValor.Size = new System.Drawing.Size(120, 20);
+            this.txtValor.TabIndex = 88;
             // 
             // txtNome
             // 
@@ -208,6 +209,7 @@
             this.btnAlterar.TabIndex = 74;
             this.btnAlterar.Text = "Alterar";
             this.btnAlterar.UseVisualStyleBackColor = true;
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
             // btnNovo
             // 
@@ -236,13 +238,13 @@
             this.label5.TabIndex = 82;
             this.label5.Text = "Medida:";
             // 
-            // comboBox2
+            // cbMedida
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(355, 106);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(317, 21);
-            this.comboBox2.TabIndex = 93;
+            this.cbMedida.FormattingEnabled = true;
+            this.cbMedida.Location = new System.Drawing.Point(355, 106);
+            this.cbMedida.Name = "cbMedida";
+            this.cbMedida.Size = new System.Drawing.Size(317, 21);
+            this.cbMedida.TabIndex = 93;
             // 
             // label6
             // 
@@ -262,19 +264,19 @@
             this.label7.TabIndex = 77;
             this.label7.Text = "Estoque mínimo:";
             // 
-            // textBox3
+            // txtEstoque
             // 
-            this.textBox3.Location = new System.Drawing.Point(355, 136);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(110, 20);
-            this.textBox3.TabIndex = 88;
+            this.txtEstoque.Location = new System.Drawing.Point(355, 136);
+            this.txtEstoque.Name = "txtEstoque";
+            this.txtEstoque.Size = new System.Drawing.Size(110, 20);
+            this.txtEstoque.TabIndex = 88;
             // 
-            // textBox4
+            // txtEstoqueMinino
             // 
-            this.textBox4.Location = new System.Drawing.Point(562, 136);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(110, 20);
-            this.textBox4.TabIndex = 86;
+            this.txtEstoqueMinino.Location = new System.Drawing.Point(562, 136);
+            this.txtEstoqueMinino.Name = "txtEstoqueMinino";
+            this.txtEstoqueMinino.Size = new System.Drawing.Size(110, 20);
+            this.txtEstoqueMinino.TabIndex = 86;
             // 
             // txtCodigo
             // 
@@ -294,24 +296,35 @@
             this.lblCodigo.TabIndex = 94;
             this.lblCodigo.Text = "Código:";
             // 
+            // btnGravar
+            // 
+            this.btnGravar.Location = new System.Drawing.Point(387, 427);
+            this.btnGravar.Name = "btnGravar";
+            this.btnGravar.Size = new System.Drawing.Size(75, 23);
+            this.btnGravar.TabIndex = 96;
+            this.btnGravar.Text = "Gravar";
+            this.btnGravar.UseVisualStyleBackColor = true;
+            this.btnGravar.Click += new System.EventHandler(this.btnGravar_Click);
+            // 
             // FrmProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(684, 461);
+            this.Controls.Add(this.btnGravar);
             this.Controls.Add(this.txtCodigo);
             this.Controls.Add(this.lblCodigo);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cbMedida);
+            this.Controls.Add(this.cbTipoProduto);
             this.Controls.Add(this.DgvCadProdutos);
             this.Controls.Add(this.btnFechar);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox10);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox8);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtObs);
+            this.Controls.Add(this.txtEstoqueMinino);
+            this.Controls.Add(this.txtCusto);
+            this.Controls.Add(this.txtComissao);
+            this.Controls.Add(this.txtEstoque);
+            this.Controls.Add(this.txtDescMaximo);
+            this.Controls.Add(this.txtValor);
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.lblObservacao);
             this.Controls.Add(this.label7);
@@ -338,14 +351,14 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbTipoProduto;
         private System.Windows.Forms.DataGridView DgvCadProdutos;
         private System.Windows.Forms.Button btnFechar;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtObs;
+        private System.Windows.Forms.TextBox txtCusto;
+        private System.Windows.Forms.TextBox txtComissao;
+        private System.Windows.Forms.TextBox txtDescMaximo;
+        private System.Windows.Forms.TextBox txtValor;
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Label lblObservacao;
         private System.Windows.Forms.Label label4;
@@ -359,12 +372,13 @@
         private System.Windows.Forms.Button btnNovo;
         private System.Windows.Forms.Label lblNome;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cbMedida;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtEstoque;
+        private System.Windows.Forms.TextBox txtEstoqueMinino;
         private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.Label lblCodigo;
+        private System.Windows.Forms.Button btnGravar;
     }
 }
