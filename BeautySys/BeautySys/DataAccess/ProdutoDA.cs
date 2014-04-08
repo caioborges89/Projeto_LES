@@ -162,31 +162,31 @@ namespace BeautySys.DataAccess
                 produtoVO.descricao = Convert.ToString(reader["DESCRICAO"]);
 
             if (reader["FK_TIPO_DESCRICAO"] != DBNull.Value)
-                produtoVO.pk_codigo = Convert.ToInt32(reader["FK_TIPO_DESCRICAO"]);
+                produtoVO.fk_tipo_produto = Convert.ToInt32(reader["FK_TIPO_PRODUTO"]);
 
             if (reader["FK_MEDIDA"] != DBNull.Value)
-                produtoVO.pk_codigo = Convert.ToInt32(reader["FK_MEDIDA"]);
+                produtoVO.fk_medida = Convert.ToString(reader["FK_MEDIDA"]);
 
             if (reader["QTDE_ESTOQUE"] != DBNull.Value)
-                produtoVO.descricao = Convert.ToString(reader["QTDE_ESTOQUE"]);
+                produtoVO.qtde_estoque = Convert.ToDecimal(reader["QTDE_ESTOQUE"]);
 
             if (reader["ESTOQUE_MINIMO"] != DBNull.Value)
-                produtoVO.pk_codigo = Convert.ToInt32(reader["ESTOQUE_MINIMO"]);
+                produtoVO.estoque_minimo = Convert.ToInt32(reader["ESTOQUE_MINIMO"]);
 
             if (reader["VALOR"] != DBNull.Value)
-                produtoVO.descricao = Convert.ToString(reader["VALOR"]);
+                produtoVO.valor = Convert.ToDecimal(reader["VALOR"]);
 
             if (reader["CUSTO"] != DBNull.Value)
-                produtoVO.pk_codigo = Convert.ToInt32(reader["CUSTO"]);
+                produtoVO.custo = Convert.ToDecimal(reader["CUSTO"]);
 
             if (reader["DESC_MAX"] != DBNull.Value)
-                produtoVO.descricao = Convert.ToString(reader["DESC_MAX"]);
+                produtoVO.desc_max = Convert.ToDecimal(reader["DESC_MAX"]);
 
             if (reader["COMISSAO"] != DBNull.Value)
-                produtoVO.pk_codigo = Convert.ToInt32(reader["COMISSAO"]);
+                produtoVO.comissao = Convert.ToDecimal(reader["COMISSAO"]);
 
             if (reader["OBS"] != DBNull.Value)
-                produtoVO.descricao = Convert.ToString(reader["OBS"]);            
+                produtoVO.obs = Convert.ToString(reader["OBS"]);            
 
         }
 

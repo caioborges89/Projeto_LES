@@ -38,17 +38,17 @@
             this.dgvUsuario = new System.Windows.Forms.DataGridView();
             this.Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UltimoAcesso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnInserir = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnFechar = new System.Windows.Forms.Button();
+            this.btnInserir = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuario)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.txbSenhaConfirma);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.txbSenha);
@@ -141,41 +141,50 @@
             this.UltimoAcesso.ReadOnly = true;
             this.UltimoAcesso.Width = 179;
             // 
-            // btnInserir
-            // 
-            this.btnInserir.Location = new System.Drawing.Point(22, 354);
-            this.btnInserir.Name = "btnInserir";
-            this.btnInserir.Size = new System.Drawing.Size(75, 23);
-            this.btnInserir.TabIndex = 2;
-            this.btnInserir.Text = "Inserir";
-            this.btnInserir.UseVisualStyleBackColor = true;
-            this.btnInserir.Click += new System.EventHandler(this.btnInserir_Click);
-            // 
             // btnExcluir
             // 
+            this.btnExcluir.Image = global::BeautySys.Properties.Resources.excluir;
+            this.btnExcluir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnExcluir.Location = new System.Drawing.Point(103, 354);
             this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(75, 23);
+            this.btnExcluir.Size = new System.Drawing.Size(75, 40);
             this.btnExcluir.TabIndex = 3;
             this.btnExcluir.Text = "Excluir";
+            this.btnExcluir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnExcluir.UseVisualStyleBackColor = true;
             this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // btnFechar
             // 
+            this.btnFechar.Image = global::BeautySys.Properties.Resources.fechar;
+            this.btnFechar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnFechar.Location = new System.Drawing.Point(184, 354);
             this.btnFechar.Name = "btnFechar";
-            this.btnFechar.Size = new System.Drawing.Size(75, 23);
+            this.btnFechar.Size = new System.Drawing.Size(81, 40);
             this.btnFechar.TabIndex = 4;
             this.btnFechar.Text = "Fechar";
+            this.btnFechar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnFechar.UseVisualStyleBackColor = true;
             this.btnFechar.Click += new System.EventHandler(this.BtnFechar_Click);
+            // 
+            // btnInserir
+            // 
+            this.btnInserir.Image = global::BeautySys.Properties.Resources.ok_32x32;
+            this.btnInserir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnInserir.Location = new System.Drawing.Point(22, 354);
+            this.btnInserir.Name = "btnInserir";
+            this.btnInserir.Size = new System.Drawing.Size(75, 40);
+            this.btnInserir.TabIndex = 2;
+            this.btnInserir.Text = "Inserir";
+            this.btnInserir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnInserir.UseVisualStyleBackColor = true;
+            this.btnInserir.Click += new System.EventHandler(this.btnInserir_Click);
             // 
             // FrmCadUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(432, 387);
+            this.ClientSize = new System.Drawing.Size(432, 403);
             this.Controls.Add(this.btnFechar);
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.btnInserir);
@@ -185,6 +194,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmCadUser";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Usuários";
             this.Load += new System.EventHandler(this.FrmCadUser_Load);

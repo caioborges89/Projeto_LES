@@ -7,11 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Cliente
+namespace LES
 {
-    public partial class Produto : Form
+    public partial class FrmTipo_Servico : Form
     {
-        public Produto()
+        public FrmTipo_Servico()
         {
             InitializeComponent();
         }

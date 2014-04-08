@@ -12,13 +12,13 @@ using BeautySys.Util;
 
 namespace BeautySys
 {
-    public partial class FrmProduto : Form
+    public partial class FrmServico : Form
     {
-        List<ProdutoVO> lista = new List<ProdutoVO>();
-        ProdutoBO _produtoBO = new ProdutoBO();
-        ProdutoVO _produtoVO = new ProdutoVO();
+        List<ServicoVO> lista = new List<ServicoVO>();
+        ServicoBO _servicoBO = new ServicoBO();
+        ServicoVO _servicoVO = new ServicoVO();
 
-        public FrmProduto()
+        public FrmServico()
         {
             InitializeComponent();
         }
@@ -31,47 +31,45 @@ namespace BeautySys
             txtComissao.Clear();
             txtCusto.Clear();
             txtDescMaximo.Clear();
-            txtEstoque.Clear();
-            txtEstoqueMinino.Clear();
+            txtDuracao.Clear();
             txtNome.Clear();
             txtObs.Clear();
             txtValor.Clear();
-            cbMedida.Text = "";
-            cbTipoProduto.Text = "";
-            GC.Collect();            
+            cbTipoServico.Text = "";
+            GC.Collect();
         }
 
         private void preencherDtgrid()
         {
             limparObjetos();
 
-            lista = _produtoBO.buscarProduto(new ProdutoVO());
+            lista = _servicoBO.buscarServico(new ServicoVO());
 
-            DgvCadProdutos.Rows.Clear();
+            dgvServicos.Rows.Clear();
             for (int i = 0; i < lista.Count; i++)
             {
-                DgvCadProdutos.Rows.Add(lista[i].pk_codigo, lista[i].descricao, lista[i].qtde_estoque, lista[i].valor);
+                dgvServicos.Rows.Add(lista[i].pk_codigo, lista[i].descricao, lista[i].valor);
             }
 
-            DgvCadProdutos.Refresh();
+            dgvServicos.Refresh();
         }
 
-        internal ProdutoVO preencherObjeto()
+        internal ServicoVO preencherObjeto()
         {
             if (!String.IsNullOrEmpty(txtCodigo.Text))
-                _produtoVO.pk_codigo = Convert.ToInt32(txtCodigo.Text);
-            _produtoVO.descricao = txtNome.Text;
-            return _produtoVO;
+                _servicoVO.pk_codigo = Convert.ToInt32(txtCodigo.Text);
+            _servicoVO.descricao = txtNome.Text;
+            return _servicoVO;
         }
 
-        private void preencheCbTipoProduto()
+        private void preencheCbTipoServico()
         {
-            TipoProdutoBO  _tipoProdutoBO = new TipoProdutoBO();
-            var list = _tipoProdutoBO.buscarTipoProduto(new TipoProdutoVO());
-            list.Insert(0, new TipoProdutoVO());
-            cbTipoProduto.DataSource = list;
-            cbTipoProduto.DisplayMember = "DESCRICAO";
-            cbTipoProduto.ValueMember = "DESCRICAO";
+            TipoServicoBO _servicoBO = new TipoServicoBO();
+            var list = _servicoBO.buscarTipoServico(new TipoServicoVO());
+            list.Insert(0, new TipoServicoVO());
+            cbTipoServico.DataSource = list;
+            cbTipoServico.DisplayMember = "DESCRICAO";
+            cbTipoServico.ValueMember = "DESCRICAO";
         }
 
         /// <summary>
@@ -85,52 +83,40 @@ namespace BeautySys
         {
             if (flag)
             {
+                btnAlterar.Enabled = true;
                 btnExcluir.Enabled = true;
                 btnGravar.Enabled = true;
                 txtComissao.Enabled = true;
                 txtCusto.Enabled = true;
                 txtDescMaximo.Enabled = true;
-                txtEstoque.Enabled = true;
-                txtEstoqueMinino.Enabled = true;
+                txtDuracao.Enabled = true;
                 txtNome.Enabled = true;
                 txtObs.Enabled = true;
                 txtValor.Enabled = true;
-                cbMedida.Enabled = true;
-                cbTipoProduto.Enabled = true;
+                cbTipoServico.Enabled = true;
             }
             else
             {
+                btnAlterar.Enabled = false;
                 btnExcluir.Enabled = false;
                 btnGravar.Enabled = false;
                 txtComissao.Enabled = false;
                 txtCusto.Enabled = false;
                 txtDescMaximo.Enabled = false;
-                txtEstoque.Enabled = false;
-                txtEstoqueMinino.Enabled = false;
+                txtDuracao.Enabled = false;
                 txtNome.Enabled = false;
                 txtObs.Enabled = false;
                 txtValor.Enabled = false;
-                cbMedida.Enabled = false;
-                cbTipoProduto.Enabled = false;
+                cbTipoServico.Enabled = false;
             }
         }
 
-        private void preencheCbMedida()
-        {
-            MedidaBO _medidaBO = new MedidaBO();
-            var list = _medidaBO.buscarMedida(new MedidaVO());
-            list.Insert(0, new MedidaVO());
-            cbTipoProduto.DataSource = list;
-            cbTipoProduto.DisplayMember = "NOME";
-            cbTipoProduto.ValueMember = "NOME";
-        }
-
 #endregion
-        
-        private void Produto_Load(object sender, EventArgs e)
+
+        private void Servico_Load(object sender, EventArgs e)
         {
-            preencheCbTipoProduto();
             preencherDtgrid();
+            preencheCbTipoServico();
             habilitaComponentes(false);
         }
 
@@ -148,18 +134,18 @@ namespace BeautySys
             }
             else
             {
-                _produtoVO.descricao = txtNome.Text;
-                lista = _produtoBO.buscarProduto(_produtoVO);
+                _servicoVO.descricao = txtNome.Text;
+                lista = _servicoBO.buscarServico(_servicoVO);
 
                 if (lista.Count == 0)
                 {
-                    if (_produtoBO.gravarProduto(preencherObjeto()))
+                    if (_servicoBO.gravarServico(preencherObjeto()))
                     {
                         MessageBox.Show("Descrição cadastrada com sucesso!", "OK!", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         limparObjetos();
-                        
-                        Produto_Load(null, null);
+
+                        Servico_Load(null, null);
                         habilitaComponentes(false);
                     }
                 }
@@ -178,11 +164,11 @@ namespace BeautySys
                 return;
             }
 
-            _produtoBO.alterarProduto(preencherObjeto());
+            _servicoBO.alterarServico(preencherObjeto());
 
             MessageBox.Show("Descrição alterada com sucesso!", "OK!", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            Produto_Load(null, null);
+            Servico_Load(null, null);
         }
 
         private void btnExcluir_Click(object sender, EventArgs e)
@@ -198,13 +184,13 @@ namespace BeautySys
                 return;
             }
 
-            _produtoVO.pk_codigo = Convert.ToInt32(DgvCadProdutos.Rows[DgvCadProdutos.CurrentRow.Index].Cells[0].Value);
+            _servicoVO.pk_codigo = Convert.ToInt32(dgvServicos.Rows[dgvServicos.CurrentRow.Index].Cells[0].Value);
 
-            _produtoBO.excluirProduto(_produtoVO);
+            _servicoBO.excluirServico(_servicoVO);
 
             MessageBox.Show("Descrição excluída com sucesso!", "OK!", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            Produto_Load(null, null);
+            Servico_Load(null, null);
         }
 
         private void btnNovo_Click(object sender, EventArgs e)
@@ -216,6 +202,7 @@ namespace BeautySys
         {
             habilitaComponentes(true);
         }
-             
+
+
     }
 }

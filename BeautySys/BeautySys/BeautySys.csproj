@@ -48,17 +48,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Business\LoginBO.cs" />
+    <Compile Include="Business\MedidaBO.cs" />
     <Compile Include="Business\ProdutoBO.cs" />
+    <Compile Include="Business\ServicoBO.cs" />
     <Compile Include="Business\TipoProdutoBO.cs" />
     <Compile Include="Business\TipoServicoBO.cs" />
     <Compile Include="Business\UsuarioBO.cs" />
     <Compile Include="Classes\LoginVO.cs" />
+    <Compile Include="Classes\MedidaVO.cs" />
     <Compile Include="Classes\ProdutoVO.cs" />
+    <Compile Include="Classes\ServicoVO.cs" />
     <Compile Include="Classes\TipoProdutoVO.cs" />
     <Compile Include="Classes\TipoServicoVO.cs" />
     <Compile Include="Classes\UsuarioVO.cs" />
     <Compile Include="DataAccess\LoginDA.cs" />
+    <Compile Include="DataAccess\MedidaDA.cs" />
     <Compile Include="DataAccess\ProdutoDA.cs" />
+    <Compile Include="DataAccess\ServicoDA.cs" />
     <Compile Include="DataAccess\TipoProdutoDA.cs" />
     <Compile Include="DataAccess\TipoServicoDA.cs" />
     <Compile Include="DataAccess\UsuarioDA.cs" />
@@ -74,6 +80,12 @@
     </Compile>
     <Compile Include="Forms\FrmLogin.Designer.cs">
       <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmMedida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmMedida.designer.cs">
+      <DependentUpon>FrmMedida.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FrmPrincipal.cs">
       <SubType>Form</SubType>
@@ -99,6 +111,12 @@
     <Compile Include="Forms\FrmProduto.designer.cs">
       <DependentUpon>FrmProduto.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FrmServico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmServico.designer.cs">
+      <DependentUpon>FrmServico.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Util\Criptografia.cs" />
@@ -108,6 +126,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmMedida.resx">
+      <DependentUpon>FrmMedida.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmPrincipal.resx">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>
@@ -120,6 +141,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmProduto.resx">
       <DependentUpon>FrmProduto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmServico.resx">
+      <DependentUpon>FrmServico.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -164,6 +188,36 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="imagens_sistema\cad_Produto.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imagens_sistema\adicionar_servico.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imagens_sistema\editar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imagens_sistema\excluir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imagens_sistema\fechar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imagens_sistema\novo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imagens_sistema\pesquisar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imagens_sistema\salvar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imagens_sistema\cadsatro_unidade.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imagens_sistema\ok_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imagens_sistema\limpar.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

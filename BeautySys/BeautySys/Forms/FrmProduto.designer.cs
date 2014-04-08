@@ -46,7 +46,6 @@
             this.btnLocalizar = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
-            this.btnNovo = new System.Windows.Forms.Button();
             this.lblNome = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.cbMedida = new System.Windows.Forms.ComboBox();
@@ -57,6 +56,7 @@
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.lblCodigo = new System.Windows.Forms.Label();
             this.btnGravar = new System.Windows.Forms.Button();
+            this.btnNovo = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DgvCadProdutos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -71,18 +71,21 @@
             // DgvCadProdutos
             // 
             this.DgvCadProdutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DgvCadProdutos.Location = new System.Drawing.Point(12, 46);
+            this.DgvCadProdutos.Location = new System.Drawing.Point(9, 12);
             this.DgvCadProdutos.Name = "DgvCadProdutos";
-            this.DgvCadProdutos.Size = new System.Drawing.Size(257, 404);
+            this.DgvCadProdutos.Size = new System.Drawing.Size(257, 396);
             this.DgvCadProdutos.TabIndex = 92;
             // 
             // btnFechar
             // 
-            this.btnFechar.Location = new System.Drawing.Point(305, 427);
+            this.btnFechar.Image = global::BeautySys.Properties.Resources.fechar;
+            this.btnFechar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFechar.Location = new System.Drawing.Point(499, 415);
             this.btnFechar.Name = "btnFechar";
-            this.btnFechar.Size = new System.Drawing.Size(75, 23);
+            this.btnFechar.Size = new System.Drawing.Size(82, 39);
             this.btnFechar.TabIndex = 91;
             this.btnFechar.Text = "Fechar";
+            this.btnFechar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnFechar.UseVisualStyleBackColor = true;
             this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
             // 
@@ -185,40 +188,44 @@
             // 
             // btnLocalizar
             // 
-            this.btnLocalizar.Location = new System.Drawing.Point(209, 10);
+            this.btnLocalizar.Image = global::BeautySys.Properties.Resources.pesquisar;
+            this.btnLocalizar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLocalizar.Location = new System.Drawing.Point(326, 415);
             this.btnLocalizar.Name = "btnLocalizar";
-            this.btnLocalizar.Size = new System.Drawing.Size(60, 23);
+            this.btnLocalizar.Size = new System.Drawing.Size(82, 39);
             this.btnLocalizar.TabIndex = 76;
             this.btnLocalizar.Text = "Localizar";
+            this.btnLocalizar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLocalizar.UseVisualStyleBackColor = true;
+            this.btnLocalizar.Click += new System.EventHandler(this.btnLocalizar_Click);
             // 
             // btnExcluir
             // 
-            this.btnExcluir.Location = new System.Drawing.Point(143, 10);
+            this.btnExcluir.Enabled = false;
+            this.btnExcluir.Image = global::BeautySys.Properties.Resources.excluir;
+            this.btnExcluir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExcluir.Location = new System.Drawing.Point(251, 415);
             this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(60, 23);
+            this.btnExcluir.Size = new System.Drawing.Size(69, 39);
             this.btnExcluir.TabIndex = 75;
             this.btnExcluir.Text = "Excluir";
+            this.btnExcluir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // btnAlterar
             // 
-            this.btnAlterar.Location = new System.Drawing.Point(77, 10);
+            this.btnAlterar.Enabled = false;
+            this.btnAlterar.Image = global::BeautySys.Properties.Resources.editar;
+            this.btnAlterar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAlterar.Location = new System.Drawing.Point(172, 415);
             this.btnAlterar.Name = "btnAlterar";
-            this.btnAlterar.Size = new System.Drawing.Size(60, 23);
+            this.btnAlterar.Size = new System.Drawing.Size(73, 39);
             this.btnAlterar.TabIndex = 74;
             this.btnAlterar.Text = "Alterar";
+            this.btnAlterar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAlterar.UseVisualStyleBackColor = true;
             this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
-            // 
-            // btnNovo
-            // 
-            this.btnNovo.Location = new System.Drawing.Point(12, 10);
-            this.btnNovo.Name = "btnNovo";
-            this.btnNovo.Size = new System.Drawing.Size(60, 23);
-            this.btnNovo.TabIndex = 73;
-            this.btnNovo.Text = "Novo";
-            this.btnNovo.UseVisualStyleBackColor = true;
             // 
             // lblNome
             // 
@@ -298,13 +305,30 @@
             // 
             // btnGravar
             // 
-            this.btnGravar.Location = new System.Drawing.Point(387, 427);
+            this.btnGravar.Enabled = false;
+            this.btnGravar.Image = global::BeautySys.Properties.Resources.salvar;
+            this.btnGravar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGravar.Location = new System.Drawing.Point(414, 415);
             this.btnGravar.Name = "btnGravar";
-            this.btnGravar.Size = new System.Drawing.Size(75, 23);
+            this.btnGravar.Size = new System.Drawing.Size(79, 39);
             this.btnGravar.TabIndex = 96;
             this.btnGravar.Text = "Gravar";
+            this.btnGravar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnGravar.UseVisualStyleBackColor = true;
             this.btnGravar.Click += new System.EventHandler(this.btnGravar_Click);
+            // 
+            // btnNovo
+            // 
+            this.btnNovo.Image = global::BeautySys.Properties.Resources.novo;
+            this.btnNovo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNovo.Location = new System.Drawing.Point(94, 415);
+            this.btnNovo.Name = "btnNovo";
+            this.btnNovo.Size = new System.Drawing.Size(72, 39);
+            this.btnNovo.TabIndex = 73;
+            this.btnNovo.Text = "Novo";
+            this.btnNovo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnNovo.UseVisualStyleBackColor = true;
+            this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
             // 
             // FrmProduto
             // 
@@ -340,7 +364,11 @@
             this.Controls.Add(this.btnAlterar);
             this.Controls.Add(this.btnNovo);
             this.Controls.Add(this.lblNome);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmProduto";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Produtos";
             this.Load += new System.EventHandler(this.Produto_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DgvCadProdutos)).EndInit();

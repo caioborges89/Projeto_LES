@@ -53,5 +53,23 @@ namespace BeautySys.Forms
             FrmProduto frmProduto = new FrmProduto();
             frmProduto.ShowDialog();
         }
+
+        private void BtnCadTpProduto_Click(object sender, EventArgs e)
+        {
+            FrmTipoProduto frmTipoProduto = new FrmTipoProduto();
+            frmTipoProduto.ShowDialog();
+        }
+
+        private void BtnCadServico_Click(object sender, EventArgs e)
+        {
+            FrmServico frmServico = new FrmServico();
+            frmServico.ShowDialog();
+        }
+
+        private void BtnCadastroMedidas_Click(object sender, EventArgs e)
+        {
+            FrmMedida frmMedida = new FrmMedida();
+            frmMedida.ShowDialog();
+        }
     }
 }

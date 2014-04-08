@@ -7,23 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Cliente
+namespace LES
 {
-    public partial class Servico : Form
+    public partial class FrmMedida : Form
     {
-        public Servico()
+        public FrmMedida()
         {
             InitializeComponent();
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Servico_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

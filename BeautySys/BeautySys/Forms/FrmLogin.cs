@@ -112,5 +112,14 @@ namespace BeautySys
             this.Dispose();
             Application.Exit();
         }
+
+        private void txbSenha_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                BtOk.PerformClick();
+            }
+        }
+
     }
 }
